@@ -16,11 +16,13 @@ contract Staking is ERC20, Ownable {
     }
 
     function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount * 10 ** decimals());
+        _mint(to, amount * 1 ether);
     }
 
     function _percentages(uint256 amount, uint256 elapsed_time) pure public returns(uint) {
-        return (amount * (annual_interest / (elapsed_time * 12 ether / 31_536_000 ether))) / 100 ether;
+        uint percentages = (annual_interest*elapsed_time) / 31_536_000 ether;
+        return (amount * percentages)/100;
+//        return (amount * (annual_interest / (elapsed_time * 12 ether / 31_536_000 ether))) / 100 ether;
     }
 
     function getActiveBalance(address holder) public view returns(uint){
