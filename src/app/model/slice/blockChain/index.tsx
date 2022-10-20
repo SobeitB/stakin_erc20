@@ -1,15 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import {blockChainState} from "../../../../shared/config/type";
+import {blockChainState} from "shared/config/type";
 
 const initialState:blockChainState = {
    address: '0x',
-   balance:null,
+   balance:0,
    provider:null,
    contract:null,
    signer:null,
    txBeingSent:false,
    error:false,
+   balanceTokens:0,
+   balanceBank:0,
+   balancePercentages:0,
 }
 
 export const blockChainSlice = createSlice({
@@ -28,20 +31,30 @@ export const blockChainSlice = createSlice({
          state.balance = action.payload;
       },
 
-      setTxBeingSent: (state, action: PayloadAction<boolean>) => {
-         state.txBeingSent = action.payload;
+      setBalanceTokens: (state, action: PayloadAction<number>) => {
+         state.balanceTokens = action.payload;
+      },
+
+      setBalanceBank: (state, action: PayloadAction<number>) => {
+         state.balanceBank = action.payload;
+      },
+
+      setBalancePercentages: (state, action: PayloadAction<number>) => {
+         state.balancePercentages = action.payload;
       },
 
       setError: (state, action: PayloadAction<string>) => {
          state.error = action.payload;
-      },
+      }
    },
 })
 
 export const {
    setFullSettings,
    setBalance,
-   setTxBeingSent,
+   setBalanceTokens,
+   setBalanceBank,
+   setBalancePercentages,
    setError
 } = blockChainSlice.actions
 

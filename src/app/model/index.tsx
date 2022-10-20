@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import blockChainSlice from './slice/blockChain'
+import valuesSlice from "entities/InputValue/model/valuesSlice";
 
 export const store = configureStore({
    reducer: {
-      blockChainSlice
+      blockChainSlice,
+      valuesSlice
    },
    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       serializableCheck: false

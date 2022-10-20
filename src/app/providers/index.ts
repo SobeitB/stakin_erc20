@@ -1,8 +1,8 @@
 import compose from "compose-function";
 import { withRouter } from "./with-router";
-import { withUi } from "./with-ui";
+import {modalError} from "features/modalError";
 
 export const withProviders = compose(
    withRouter,
-   withUi,
+   modalError
 );
