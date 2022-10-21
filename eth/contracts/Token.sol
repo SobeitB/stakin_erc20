@@ -2,7 +2,7 @@
 pragma solidity ^0.8.9;
 
 import "hardhat/console.sol";
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "./ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 
@@ -22,7 +22,6 @@ contract Staking is ERC20, Ownable {
     function _percentages(uint256 amount, uint256 elapsed_time) pure public returns(uint) {
         uint percentages = (annual_interest*elapsed_time) / 31_536_000 ether;
         return (amount * percentages)/100;
-//        return (amount * (annual_interest / (elapsed_time * 12 ether / 31_536_000 ether))) / 100 ether;
     }
 
     function getActiveBalance(address holder) public view returns(uint){

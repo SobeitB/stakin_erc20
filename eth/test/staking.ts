@@ -62,11 +62,8 @@ describe("Staking", function () {
       await time.increase(time.duration.years(1))
 
       const holderActiveBalance = await staking.getActiveBalance(holder.address);
-      console.log(utils.formatEther(holderActiveBalance) + ' active')
 
       await staking.connect(holder).tokensWithdraw();
-      const balance_TokensBefore = await staking.balanceOf(holder.address);
-
     })
 
     it('withdraw ethers', async function() {

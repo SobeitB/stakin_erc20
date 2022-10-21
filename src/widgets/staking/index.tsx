@@ -4,6 +4,7 @@ import {StakeBtn} from "entities/Stake";
 import {InputValue} from "entities/InputValue";
 import {StatusValue} from "entities/InputValue/type";
 import {UnStake} from "entities/UnStake";
+import {ApproveBtn} from "entities/Approve";
 
 export const Staking = () => {
    const {
@@ -26,6 +27,7 @@ export const Staking = () => {
 
          <InputValue status={StatusValue.stake} />
 
+         <ApproveBtn />
          <StakeBtn />
          <UnStake />
       </Display>

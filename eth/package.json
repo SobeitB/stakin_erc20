@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx hardhat test",
+    "typechain": "npx hardhat typechain",
     "coverage": "npx hardhat test coverage"
   },
   "keywords": [],
