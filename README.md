@@ -9,8 +9,11 @@
 4. fill it out .env in the folder .eth:
    ALCHEMY_KEY=
    PRIVATE_KEY=
+5. npm run typechain
+6. npm run test
 
-5. cd stakin_erc20
-6. npm i -save-dev @types/styled-components
-
+7. cd stakin_erc20
+8. npm i -save-dev @types/styled-components
+9. npm run start
+ 
 # read more about the architecture of the frontend application: https://feature-sliced.design
